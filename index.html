@@ -300,13 +300,15 @@
             <form
               name="contact"
               method="POST"
-              netlify
-              netlify-honeypot="bot-field"
+              data-netlify="true"
               action="/thank-you.html"
             >
+              <input type="hidden" name="form-name" value="contact" />
+
               <div class="mb-3">
                 <input
                   type="text"
+                  name="name"
                   class="form-control"
                   placeholder="Name"
                   required
@@ -315,6 +317,7 @@
               <div class="mb-3">
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   placeholder="Email"
                   required
@@ -322,13 +325,14 @@
               </div>
               <div class="mb-3">
                 <textarea
+                  name="message"
                   class="form-control"
                   placeholder="Message"
                   rows="5"
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-dark px-4">
+              <button type="submit" class="btn btn-primary">
                 Send Message
               </button>
             </form>
